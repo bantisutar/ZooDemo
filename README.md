@@ -2,9 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
+## To start Development servers
+
+run ng serve command in terminal to run Angular Application and to run node server run command node server in project directory.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Import MongoDb config json 
+
+Run "mongoimport --db animalforum --collection animals --file animal.json" inside the mongoDb folder. 
 
 ## Code scaffolding
 
