@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## To start Development servers
 
-run ng serve command in terminal to run Angular Application and to run node server run command node server in project directory.
+run ng serve command in terminal to run Angular Application and to run "node server"  command in project directory to start node server.
 
 ## Development server
 
