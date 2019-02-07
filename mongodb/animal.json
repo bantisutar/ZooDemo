@@ -1,0 +1,22 @@
+{"type": "pet","category": "dog","breed": "german shephard","height":{"$numberLong":"80"}, "weight":{"$numberLong":"40"},"food":"carnivorous","speed":{"$numberLong":"40"},"color":"brown and black","status":{"$numberInt":"1"}}
+{"type": "pet","category": "dog","breed": "husky","height":{"$numberLong":"90"}, "weight":{"$numberLong":"45"},"food":"carnivorous","speed":{"$numberLong":"42"},"color":"white and silver","status":{"$numberInt":"1"}}
+{"type": "pet","category": "dog","breed": "malamut","height":{"$numberLong":"90"}, "weight":{"$numberLong":"50"},"food":"carnivorous","speed":{"$numberLong":"41"},"color":"white and gray","status":{"$numberInt":"1"}}
+{"type": "pet","category": "cat","breed": "persian","height":{"$numberLong":"60"}, "weight":{"$numberLong":"20"},"food":"carnivorous","speed":{"$numberLong":"30"},"color":"dark gray","status":{"$numberInt":"1"}}
+{"type": "pet","category": "cat","breed": "sphinx","height":{"$numberLong":"40"}, "weight":{"$numberLong":"15"},"food":"carnivorous","speed":{"$numberLong":"24"},"color":"grey","status":{"$numberInt":"1"}}
+
+{"type": "pet","category": "cat","breed": "munchkin","height":{"$numberLong":"50"}, "weight":{"$numberLong":"18"},"food":"carnivorous","speed":{"$numberLong":"27"},"color":"white and black","status":{"$numberInt":"1"}}
+{"type": "pet","category": "cat","breed": "russian blue","height":{"$numberLong":"60"}, "weight":{"$numberLong":"22"},"food":"carnivorous","speed":{"$numberLong":"25"},"color":"bluish gray","status":{"$numberInt":"1"}}
+{"type": "pet","category": "others","breed": "parrot","height":{"$numberLong":"20"}, "weight":{"$numberLong":"2"},"food":"herbivorous","speed":{"$numberLong":"40"},"color":"green","status":{"$numberInt":"1"}}
+{"type": "pet","category": "others","breed": "squirel","height":{"$numberLong":"8"}, "weight":{"$numberLong":"15"},"food":"herbivorous","speed":{"$numberLong":"25"},"color":"brown and black","status":{"$numberInt":"1"}}
+{"type": "wild","category": "dog","breed": "hyena","height":{"$numberLong":"80"}, "weight":{"$numberLong":"60"},"food":"carnivorous","speed":{"$numberLong":"40"},"color":"brown and black","status":{"$numberInt":"1"}}
+
+
+{"type": "wild","category": "dog","breed": "coyote","height":{"$numberLong":"70"}, "weight":{"$numberLong":"55"},"food":"carnivorous","speed":{"$numberLong":"45"},"color":"light brown","status":{"$numberInt":"1"}}
+{"type": "wild","category": "dog","breed": "wolf","height":{"$numberLong":"100"}, "weight":{"$numberLong":"75"},"food":"carnivorous","speed":{"$numberLong":"45"},"color":"gray","status":{"$numberInt":"1"}}
+{"type": "wild","category": "cat","breed": "lion","height":{"$numberLong":"140"}, "weight":{"$numberLong":"120"},"food":"carnivorous","speed":{"$numberLong":"60"},"color":"white","status":{"$numberInt":"1"}}
+{"type": "wild","category": "cat","breed": "tiger","height":{"$numberLong":"130"}, "weight":{"$numberLong":"120"},"food":"carnivorous","speed":{"$numberLong":"65"},"color":"orange","status":{"$numberInt":"1"}}
+{"type": "wild","category": "cat","breed": "cheetah","height":{"$numberLong":"110"}, "weight":{"$numberLong":"90"},"food":"carnivorous","speed":{"$numberLong":"90"},"color":"orange and black","status":{"$numberInt":"1"}}
+
+{"type": "wild","category": "others","breed": "elephant","height":{"$numberLong":"250"}, "weight":{"$numberLong":"400"},"food":"herbivorous","speed":{"$numberLong":"30"},"color":"dark gray","status":{"$numberInt":"1"}}
+{"type": "wild","category": "others","breed": "zebra","height":{"$numberLong":"160"}, "weight":{"$numberLong":"100"},"food":"herbivorous","speed":{"$numberLong":"35"},"color":"white and black","status":{"$numberInt":"1"}}
+{"type": "wild","category": "others","breed": "giraffe","height":{"$numberLong":"400"}, "weight":{"$numberLong":"130"},"food":"herbivorous","speed":{"$numberLong":"30"},"color":"orange and brown","status":{"$numberInt":"1"}}

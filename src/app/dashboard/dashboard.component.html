@@ -1,0 +1,236 @@
+<app-navbar></app-navbar>
+<mat-drawer-container class="example-container" autosize>
+<mat-drawer #drawer class="example-sidenav" mode="side" opened>
+<app-sidebar></app-sidebar>
+</mat-drawer>
+<div class="example-sidenav-content">
+<div class="">
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-title">
+        <!--   <h2>MASTER<small>Content Overview</small></h2> -->
+        <ol class="breadcrumb d-flex justify-content-between">
+          <li class="active"><i class="fa fa-dashboard fa-3x mr-3 text-faded"></i> <span class="text-faded">Master Dashboard</span></li>
+          
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- page-wrapper END-->
+  </div><!-- container-1 END-->
+  <!-- <router-outlet></router-outlet> -->
+
+<div class="clearfix titlecss">
+  <span class="float-left"><h1>LIST OF ANIMALS</h1> </span>
+  <span class="float-right"> <button class="btn btn-dark pull-right" (click)="showNewrecord()">Add New Record</button></span>
+</div>
+
+
+<div class="card dialog modal-dialog-box" *ngIf="show">
+  <div class="card-body"> 
+            <h3>EDIT CURRENT RECORD</h3>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit(currentAnimal)" #f="ngForm" novalidate>
+                  <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <input type="text" class="form-control" name="type" [(ngModel)]="currentAnimal.type" #type="ngModel" [ngClass]="{ 'is-invalid': f.submitted && type.invalid }" required />
+                        <div *ngIf="f.submitted && type.invalid" class="invalid-feedback">
+                            <div *ngIf="type.errors.required">type is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input type="text" class="form-control" name="category" [(ngModel)]="currentAnimal.category" #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required />
+                        <div *ngIf="f.submitted && category.invalid" class="invalid-feedback">
+                            <div *ngIf="category.errors.required">Category is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="breed">Breed</label>
+                        <input type="text" class="form-control" name="breed" [(ngModel)]="currentAnimal.breed" #breed="ngModel" [ngClass]="{ 'is-invalid': f.submitted && breed.invalid }" required breed />
+                        <div *ngIf="f.submitted && breed.invalid" class="invalid-feedback">
+                            <div *ngIf="breed.errors.required">breed is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="number" class="form-control" name="height" [(ngModel)]="currentAnimal.height" #height="ngModel" [ngClass]="{ 'is-invalid': f.submitted && height.invalid }" required minlength="2" />
+                        <div *ngIf="f.submitted && height.invalid" class="invalid-feedback">
+                            <div *ngIf="height.errors.required">height is required</div>
+                            <div *ngIf="height.errors.minlength">height must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger" (click)="show=false">CANCEL</button>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="weight">Weight</label>
+                        <input type="number" class="form-control" name="weight" [(ngModel)]="currentAnimal.weight" #weight="ngModel" [ngClass]="{ 'is-invalid': f.submitted && weight.invalid }" required minlength="2"/>
+                        <div *ngIf="f.submitted && weight.invalid" class="invalid-feedback">
+                            <div *ngIf="weight.errors.required">First Name is required</div>
+                             <div *ngIf="weight.errors.minlength">weight must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="speed">Speed</label>
+                        <input type="number" class="form-control" name="speed" [(ngModel)]="currentAnimal.speed" #speed="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speed.invalid }" required minlength="2"/>
+                        <div *ngIf="f.submitted && speed.invalid" class="invalid-feedback">
+                            <div *ngIf="speed.errors.required">Speed is required</div>
+                            <div *ngIf="speed.errors.minlength">Speed must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control" name="color" [(ngModel)]="currentAnimal.color" #color="ngModel" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" required color />
+                        <div *ngIf="f.submitted && color.invalid" class="invalid-feedback">
+                            <div *ngIf="color.errors.required">color is required</div>
+                            <div *ngIf="color.errors.color">color must be a valid color address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="food">Food</label>
+                        <input type="text" class="form-control" name="food" [(ngModel)]="currentAnimal.food" #food="ngModel" [ngClass]="{ 'is-invalid': f.submitted && food.invalid }" required  />
+                        <div *ngIf="f.submitted && food.invalid" class="invalid-feedback">
+                            <div *ngIf="food.errors.required">food is required</div>
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-dark">SAVE RECORD</button>
+                    </div>
+                     
+                  </div>
+                </div>
+            </form>
+       
+    </div>
+  </div>
+  <div class="card dialog modal-dialog-box" *ngIf="showNew">
+  <div class="card-body"> 
+
+                <h3>ADD NEW RECORD</h3>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit(newAnimal)" #f="ngForm" novalidate>
+                  <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <input type="text" class="form-control" name="type" [(ngModel)]="newAnimal.type" #type="ngModel" [ngClass]="{ 'is-invalid': f.submitted && type.invalid }" required />
+                        <div *ngIf="f.submitted && type.invalid" class="invalid-feedback">
+                            <div *ngIf="type.errors.required">type is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input type="text" class="form-control" name="category" [(ngModel)]="newAnimal.category" #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required />
+                        <div *ngIf="f.submitted && category.invalid" class="invalid-feedback">
+                            <div *ngIf="category.errors.required">Category is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="breed">Breed</label>
+                        <input type="text" class="form-control" name="breed" [(ngModel)]="newAnimal.breed" #breed="ngModel" [ngClass]="{ 'is-invalid': f.submitted && breed.invalid }" required breed />
+                        <div *ngIf="f.submitted && breed.invalid" class="invalid-feedback">
+                            <div *ngIf="breed.errors.required">breed is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="number" class="form-control" name="height" [(ngModel)]="newAnimal.height" #height="ngModel" [ngClass]="{ 'is-invalid': f.submitted && height.invalid }" required minlength="2" />
+                        <div *ngIf="f.submitted && height.invalid" class="invalid-feedback">
+                            <div *ngIf="height.errors.required">height is required</div>
+                            <div *ngIf="height.errors.minlength">height must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger" (click)="showNew=false">CANCEL</button>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="weight">Weight</label>
+                        <input type="number" class="form-control" name="weight" [(ngModel)]="newAnimal.weight" #weight="ngModel" [ngClass]="{ 'is-invalid': f.submitted && weight.invalid }" required minlength="2"/>
+                        <div *ngIf="f.submitted && weight.invalid" class="invalid-feedback">
+                            <div *ngIf="weight.errors.required">First Name is required</div>
+                             <div *ngIf="weight.errors.minlength">weight must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="speed">Speed</label>
+                        <input type="number" class="form-control" name="speed" [(ngModel)]="newAnimal.speed" #speed="ngModel" [ngClass]="{ 'is-invalid': f.submitted && speed.invalid }" required minlength="2"/>
+                        <div *ngIf="f.submitted && speed.invalid" class="invalid-feedback">
+                            <div *ngIf="speed.errors.required">Speed is required</div>
+                            <div *ngIf="speed.errors.minlength">Speed must be 2 digit</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control" name="color" [(ngModel)]="newAnimal.color" #color="ngModel" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" required color />
+                        <div *ngIf="f.submitted && color.invalid" class="invalid-feedback">
+                            <div *ngIf="color.errors.required">color is required</div>
+                            <div *ngIf="color.errors.color">color must be a valid color address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="food">Food</label>
+                        <input type="text" class="form-control" name="food" [(ngModel)]="newAnimal.food" #food="ngModel" [ngClass]="{ 'is-invalid': f.submitted && food.invalid }" required  />
+                        <div *ngIf="f.submitted && food.invalid" class="invalid-feedback">
+                            <div *ngIf="food.errors.required">food is required</div>
+                           
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-dark">SAVE RECORD</button>
+                    </div>
+                   
+                  </div>
+                </div>
+            </form>
+       
+    </div>
+  </div>
+  <div class="table-responsive">
+
+    
+  <table width="100%" class="table table-dark">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Speed</th>
+         <th>Color</th>
+          <th>Food</th>
+            <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of animals;let i=index">
+        <td>{{i+1}}</td>
+         <td>{{x.type}}</td>
+        <td>{{x.category}}</td>
+        <td>{{x.height}}</td>
+        <td>{{x.weight}}</td>
+        <td>{{x.speed }}</td>
+        <td>{{x.color }}</td>
+        <td>{{x.food }}</td>
+        <td>
+          <a href="javascript:void(0)" (click)="edit(x)"><i class="fa fa-edit"></i></a>&nbsp;
+          <a href="javascript:void(0)" (click)="delete(x)"><i class="fa fa-trash"></i></a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+      
+</div>
+</div>
+
+</mat-drawer-container>
